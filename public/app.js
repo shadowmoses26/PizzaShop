@@ -7,3 +7,9 @@ function something()
     window.localStorage.setItem('bbb',555);
     alert(x);
 }
+
+
+function add_to_cart()
+{
+    alert('Hello from test!');
+}
