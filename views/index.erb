@@ -1,10 +1,15 @@
 <h2>Welcome to pizza Shop!</h2>
 
-<%@products.each do |p| %>
-  <p>
-    product
-  </p>
-<% end %>
+<div class="row">
+
+  <%@products.each do |p| %>
+    <div class="col-md-3">
+      <%=p.title %>
+    </div>
+  <% end %>
+
+
+</div>
 
 <button class="btn btn-danger btn-large" onclick="something()" >Click me!</button>
 
