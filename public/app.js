@@ -16,6 +16,7 @@ function add_to_cart(id) {
 
     alert('Items in your cart: ' + cart_get_number_of_items() );
     update_orders_input();
+    update_orders_button();
 }
 
 function cart_get_number_of_items() {
@@ -55,4 +56,12 @@ function cart_get_orders() {
         }
     }
     return orders;
+}
+
+function update_orders_button()
+{
+    var text = 'Cart (' + cart_get_number_of_items() + ')';
+    $('#orders_button').val(text);
+
+
 }
