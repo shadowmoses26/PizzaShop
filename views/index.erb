@@ -2,26 +2,26 @@
 
 <div class="row">
 
-  <%@products.each do |p| %>
+  <% @products.each do |p| %>
     <div class="col-md-3">
       <div>
-      <%=p.title %>
+        <%= p.title %>
       </div>
 
       <div>
-        <img src=" <%=p.path_to_image %>" class="img-fluid" alt="Responsive image" />
+        <img src=" <%= p.path_to_image %>" class="img-fluid" alt="Responsive image"/>
       </div>
 
       <div>
-        <%=p.description %>
+        <%= p.description %>
       </div>
 
       <div>
-        <b>Size:</b> <%=p.size %>
+        <b>Size:</b> <%= p.size %>
       </div>
 
       <div>
-        <b>Price:</b> <%=p.price %> <b>rub</b>
+        <b>Price:</b> <%= p.price %> <b>rub</b>
       </div>
 
       <div>
@@ -34,5 +34,11 @@
 
 </div>
 
-<button class="btn btn-danger btn-large" onclick="something()" >Click me!</button>
+<button class="btn btn-danger btn-large" onclick="something()">Click me!</button>
+
+<script type="text/javascript">
+    $(function () {
+        update_orders_input();
+    });
+</script>
 
