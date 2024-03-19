@@ -11,9 +11,7 @@ configure :development do
   set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'pizzaShop', pool: 2, username: 'postgres', password: 'root', port: '5433' }
 end
 
-
 class Order < ActiveRecord::Base
-
 
 end
 
@@ -33,17 +31,25 @@ end
 post '/cart' do
 
   @orders_input = params[:orders]
-	@items = parse_orders_input @orders_input
-@items.each do |item|
+  @items = parse_orders_input @orders_input
+  @items.each do |item|
 
-item[0] = Product.find(item[0])
-end
+    item[0] = Product.find(item[0])
+  end
 
   erb :cart
 end
 
 post '/place_order' do
+  @order = Order.create params[:order]
 
+  erb :order_placed
+  # if @order.save
+  #   erb "<h2>Thank you! You order has benn placed</h2>"
+  # else
+  #   @error = @order.errors.filter.first
+  #   erb "Error"
+  # end
 end
 
 def parse_orders_input (orders_input)
