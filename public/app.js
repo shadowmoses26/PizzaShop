@@ -65,3 +65,10 @@ function update_orders_button()
 
 
 }
+
+
+function cancel_order()
+{
+    alert('aaaa');
+    return false;
+}
