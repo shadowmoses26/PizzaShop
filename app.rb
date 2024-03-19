@@ -11,6 +11,12 @@ configure :development do
   set :database, { adapter: 'postgresql', encoding: 'unicode', database: 'pizzaShop', pool: 2, username: 'postgres', password: 'root', port: '5433' }
 end
 
+
+class Order < ActiveRecord::Base
+
+
+end
+
 class Product < ActiveRecord::Base
 
 end
@@ -36,6 +42,10 @@ end
   erb :cart
 end
 
+post '/place_order' do
+
+end
+
 def parse_orders_input (orders_input)
   s1 = orders_input.split(/,/)
   arr = []
@@ -49,3 +59,4 @@ def parse_orders_input (orders_input)
   end
   return arr
 end
+
